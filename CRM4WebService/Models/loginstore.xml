@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<Admins>
+  <Users>
+    <username>adm</username>
+    <password>Ghjdthrf123456!</password>
+    <garnt_type>Administrator</garnt_type>
+  </Users>
+  <Users>
+    <username>1cReader</username>
+    <password>Ghjdthrf123</password>
+    <garnt_type>Reader</garnt_type>
+  </Users>
+  <Users>
+    <username>OnlineReader</username>
+    <password>Ghjdthrf123</password>
+    <garnt_type>Writer</garnt_type>
+  </Users>
+</Admins>

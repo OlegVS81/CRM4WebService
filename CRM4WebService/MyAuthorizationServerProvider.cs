@@ -22,14 +22,15 @@ namespace CRM4WebService
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
                 identity.AddClaim(new Claim("username", "admin"));
-                identity.AddClaim(new Claim(ClaimTypes.Name, "Sourav Mondal"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, "Oleg"));
                 context.Validated(identity);
             }
-            else if (context.UserName == "user" && context.Password == "user")
+            else if (context.UserName == "1cReader" && context.Password == "Ghjdthrf123")
             {
-                identity.AddClaim(new Claim(ClaimTypes.Role, "user"));
-                identity.AddClaim(new Claim("username", "user"));
-                identity.AddClaim(new Claim(ClaimTypes.Name, "Suresh Sha"));
+                identity.AddClaim(new Claim(ClaimTypes.Role, "Reader"));
+                //identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
+                identity.AddClaim(new Claim("username", "1cReader"));
+                identity.AddClaim(new Claim(ClaimTypes.Name, "Михаил"));
                 context.Validated(identity);
             }
             else
