@@ -482,11 +482,21 @@
             <param name="documentPath">The physical path to XML document.</param>
         </member>
         <member name="M:CRM4WebService.Controllers.Integration1CController.Get(System.String)">
-            <summary>
-            По id договора возвращает массив значений
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
+             <summary>
+             По id договора возвращает массив значений
+             </summary>
+             <param name="id">Должен быть в формате GUID. Присмер: 3C5C73AC-DDD6-E911-80CD-005056BAC107</param>
+             <returns>возвращает xml в тэге report с
+             , где 
+             opportunityid - id договра;
+             name - номер договора;
+             new_contact2id - Законный представитель ФЛ/ Подписант ЮЛ;
+             new_pay_installments - рассрочка в банке;
+             new_discountpercent - % комиссии банка;
+             new_commission_amount - Сумма комиссии банка;
+             new_totalsumcost - Общая стоимость обучения с учетом пособий.
+             
+            </returns>
         </member>
     </members>
 </doc>

@@ -30,7 +30,7 @@ namespace CRM4WebService.Models
 
             QueryExpression qe = new QueryExpression("opportunity")
             {
-                ColumnSet = new ColumnSet(new String[] { "opportunityid", "new_signdate", "new_programsidcost", "new_studyplaceid", "new_placeofwriteid", "ownerid", "customerid", "name", "new_regionid" }),
+                ColumnSet = new ColumnSet(new String[] { "new_discountpercent", "new_pay_installments", "opportunityid", "new_contact2id", "new_signdate", "new_programsidcost", "new_studyplaceid", "new_placeofwriteid", "ownerid", "customerid", "name","new_commission_amount", "new_totalsumcost" }),
                 Criteria = new FilterExpression()
                 {
                     FilterOperator = LogicalOperator.And,
