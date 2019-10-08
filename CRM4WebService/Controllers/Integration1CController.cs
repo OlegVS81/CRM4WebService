@@ -25,8 +25,7 @@ namespace CRM4WebService.Controllers
 {
     public class Integration1CController : ApiController
     {
-
-        private Logger logger;
+        Logger Integration1C_log = LogManager.GetCurrentClassLogger();
 
         //[AllowAnonymous]
         //[HttpGet]
@@ -79,6 +78,8 @@ namespace CRM4WebService.Controllers
         [Route("api/Integration1C")]
         public HttpResponseMessage Get(string id)
         {
+            string XML = "";
+            Integration1C_log.Info($"Integration1C. Get id='{id}'");
             //595CC35C-30D2-E911-80CC-005056BAC107
             BusinessEntityCollection opportunity;
             Opp o = new Opp();
@@ -89,34 +90,47 @@ namespace CRM4WebService.Controllers
             CrmMoney new_commission_amount = new CrmMoney();//Сумма комиссии банка
             CrmMoney new_totalsumcost = new CrmMoney();//Общая стоимость обучения с учетом пособий
 
-            opportunity = o.searchOpportunity(id);
-            foreach (Microsoft.Crm.Sdk.DynamicEntity opp in opportunity.BusinessEntities)
+            try
             {
-                nameopp = opp["name"].ToString();
+                opportunity = o.searchOpportunity(id);
+                foreach (DynamicEntity opp in opportunity.BusinessEntities)
+                {
+                    nameopp = opp["name"].ToString();
 
-                if (opp.Properties.Contains("new_contact2id"))
-                    new_contact2id = (Lookup)opp["new_contact2id"];
+                    if (opp.Properties.Contains("new_contact2id"))
+                        new_contact2id = (Lookup)opp["new_contact2id"];
 
-                if (opp.Properties.Contains("new_pay_installments"))
-                    new_pay_installments = (CrmBoolean)opp["new_pay_installments"];
+                    if (opp.Properties.Contains("new_pay_installments"))
+                        new_pay_installments = (CrmBoolean)opp["new_pay_installments"];
 
-                if (opp.Properties.Contains("new_discountpercent"))
-                    new_discountpercent = (CrmFloat)opp["new_discountpercent"];
+                    if (opp.Properties.Contains("new_discountpercent"))
+                        new_discountpercent = (CrmFloat)opp["new_discountpercent"];
 
-                if (opp.Properties.Contains("new_commission_amount"))
-                    new_commission_amount = (CrmMoney)opp["new_commission_amount"];
+                    if (opp.Properties.Contains("new_commission_amount"))
+                        new_commission_amount = (CrmMoney)opp["new_commission_amount"];
 
-                if (opp.Properties.Contains("new_totalsumcost"))
-                    new_totalsumcost = (CrmMoney)opp["new_totalsumcost"];
+                    if (opp.Properties.Contains("new_totalsumcost"))
+                        new_totalsumcost = (CrmMoney)opp["new_totalsumcost"];
 
+                }
+
+            
+                XML = String.Format("<report><opportunityid>{0}</opportunityid><name>{1}</name><new_contact2id>{2}</new_contact2id><new_pay_installments>{3}</new_pay_installments><new_discountpercent>{4}</new_discountpercent><new_commission_amount>{5}</new_commission_amount><new_totalsumcost>{6}</new_totalsumcost></report>", id, nameopp, new_contact2id.Value.ToString(), new_pay_installments.Value, new_discountpercent.Value, new_commission_amount.Value, new_totalsumcost.Value);
+                Integration1C_log.Info($"Integration1C. Response xml='{XML}'");
+                return new HttpResponseMessage()
+                {
+                    Content = new StringContent(XML, Encoding.UTF8, "application/xml")
+                };
             }
-
-
-            string XML = String.Format("<report><opportunityid>{0}</opportunityid><name>{1}</name><new_contact2id>{2}</new_contact2id><new_pay_installments>{3}</new_pay_installments><new_discountpercent>{4}</new_discountpercent><new_commission_amount>{5}</new_commission_amount><new_totalsumcost>{6}</new_totalsumcost></report>", id, nameopp, new_contact2id.Value.ToString(), new_pay_installments.Value, new_discountpercent.Value, new_commission_amount.Value, new_totalsumcost.Value);
-            return new HttpResponseMessage()
+            catch (Exception ex)
             {
-                Content = new StringContent(XML, Encoding.UTF8, "application/xml")
-            };
+                XML = String.Format("<report><error>{0}</error></report>", ex.ToString());
+
+                return new HttpResponseMessage()
+                {
+                    Content = new StringContent(XML, Encoding.UTF8, "application/xml")
+                };
+            }
 
         }
 
