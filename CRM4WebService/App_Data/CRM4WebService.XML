@@ -498,5 +498,644 @@
              
             </returns>
         </member>
+        <member name="M:CRM4WebService.Controllers.OnlineContactController.Post(CRM4WebService.Models.Contact)">
+            <summary>
+            Создание контакта
+            </summary>
+            <param name="value">json контакта</param>
+            <returns>Возвращает GUID договора или ошибку</returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineContactController.Put(System.Guid,CRM4WebService.Models.Contact)">
+            <summary>
+            Обновление контакта
+            </summary>
+            <param name="id">id контакта</param>
+            <param name="value">json контакта</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineContactController.Get(System.String)">
+            <summary>
+            Проверяет существование контакта по id
+            </summary>
+            <param name="id">id контакта</param>
+            <returns></returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineContractsController.Post(CRM4WebService.Models.Opp)">
+            <summary>
+            Создание договора
+            </summary>
+            <param name="value">json договора</param>
+            <returns>Возвращает GUID договора или ошибку</returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineContractsController.Put(System.Guid,CRM4WebService.Models.Opp)">
+            <summary>
+            Обновление договора
+            </summary>        
+            <param name="id">GUID договора</param>
+            <param name="value">json договора</param>
+            <returns>Возвращает GUID договора или ошибку</returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineContractsController.Get(System.String)">
+            <summary>
+            Проверяет существование договора по id
+            </summary>
+            <param name="id">id договора</param>
+            <returns>Возвращает наименование договора</returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineReestrController.Post(CRM4WebService.Models.Reestr)">
+            <summary>
+            Ввод реестра оплат
+            </summary>
+            <param name="value">json Реестра оплат</param>
+            <returns>Возращает id реестра оплат или ошибку</returns>
+        </member>
+        <member name="M:CRM4WebService.Controllers.OnlineReestrController.Get(System.String)">
+            <summary>
+            Проверяет существование Реестра оплат по id
+            </summary>
+            <param name="id">id Реестра оплат</param>
+            <returns></returns>
+        </member>
+        <member name="F:CRM4WebService.Models.Config.new_name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Config.new_count">
+            <summary>
+            Количество запросов
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Config.new_current_amount">
+            <summary>
+            Текущее значение запросов
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Config.new_period">
+            <summary>
+            Дата последнего запроса
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.salutation">
+            <summary>
+            Приветствие
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.lastname">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.firstname">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.mobilephone">
+            <summary>
+            Мобильный телефон
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.emailaddress1">
+            <summary>
+            Электронная почта
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.middlename">
+            <summary>
+            Отчество
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.address1_name">
+            <summary>
+            Название
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.address1_line1">
+            <summary>
+            Улица, дом
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.address1_city">
+            <summary>
+            Город
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.address1_stateorprovince">
+            <summary>
+            Область, край, республика
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.address1_postalcode">
+            <summary>
+            Почтовый индекс
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.address1_country">
+            <summary>
+            Страна
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_seria">
+            <summary>
+            Серия
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_nomer">
+            <summary>
+            Номер
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_giveoutby">
+            <summary>
+            Кем выдан
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.gendercode">
+            <summary>
+            Пол
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_nationality">
+            <summary>
+            Гражданство
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_type">
+            <summary>
+            Тип ФЛ
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.familystatuscode">
+            <summary>
+            Семейное положение
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.birthdate">
+            <summary>
+            День рождения
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_openles">
+            <summary>
+            Посетил открытый урок
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.new_dategiveout">
+            <summary>
+            Дата выдачи
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Contact.ownerid">
+            <summary>
+            Ответственный
+            </summary>
+        </member>
+        <member name="T:CRM4WebService.Models.Opp">
+            <summary>
+            Договор CRM
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.name">
+            <summary>
+            Номер договора на обучение
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.campaignid">
+            <summary>
+            Исходная кампания
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_signatoryid">
+            <summary>
+            Подписант от Школы
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_studyplaceid">
+            <summary>
+            Место обучения
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_placeofwriteid">
+            <summary>
+            Место заключения договора
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_discount1id">
+            <summary>
+            Скидка по времени обучения
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_discount4id">
+            <summary>
+            Скидка Кредит/рассрочка
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_regionid">
+            <summary>
+            Юридическое лицо организации
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.customerid">
+            <summary>
+            Клиент
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.ownerid">
+            <summary>
+            Ответственный
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_programsidcost">
+            <summary>
+            Программа обучения
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_contactid">
+            <summary>
+            Контактное лицо по договору
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_contact2id">
+            <summary>
+            Законный представитель ФЛ
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.estimatedvalue">
+            <summary>
+            Предполагаемый доход
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.exchangerate">
+            <summary>
+            Курс обмена
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan1">
+            <summary>
+            Сумма плановая1
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan2">
+            <summary>
+            Сумма плановая2
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan3">
+            <summary>
+            Сумма плановая3
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan4">
+            <summary>
+            Сумма плановая4
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan5">
+            <summary>
+            Сумма плановая5
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan6">
+            <summary>
+            Сумма плановая6
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan7">
+            <summary>
+            Сумма плановая7
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan8">
+            <summary>
+            Сумма плановая8
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan9">
+            <summary>
+            Сумма плановая9
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan10">
+            <summary>
+            Сумма плановая10
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan11">
+            <summary>
+            Сумма плановая11
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costplan12">
+            <summary>
+            Сумма плановая12
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact1">
+            <summary>
+            Сумма фактическая1
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact2">
+            <summary>
+            Сумма фактическая2
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact3">
+            <summary>
+            Сумма фактическая3
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact4">
+            <summary>
+            Сумма фактическая4
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact5">
+            <summary>
+            Сумма фактическая5
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact6">
+            <summary>
+            Сумма фактическая6
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact7">
+            <summary>
+            Сумма фактическая7
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact8">
+            <summary>
+            Сумма фактическая8
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact9">
+            <summary>
+            Сумма фактическая9
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact10">
+            <summary>
+            Сумма фактическая10
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact11">
+            <summary>
+            Сумма фактическая11
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_costfact12">
+            <summary>
+            Сумма фактическая12
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_lesduration">
+            <summary>
+            Количество академических часов в занятии
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_summarycost">
+            <summary>
+            Стоимость программы
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_totalsumcost">
+            <summary>
+            Общая стоимость обучения с учётом пособий
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_hourcost">
+            <summary>
+            Стоимость одного академического часа
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.isrevenuesystemcalculated">
+            <summary>
+            Доход
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_applydiscount">
+            <summary>
+            Применять скидку
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_bookisneeded">
+            <summary>
+            Пособие нужно
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_age">
+            <summary>
+            Возраст клиента
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_legalentity">
+            <summary>
+            Юридическое лицо
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_sort">
+            <summary>
+            Вид договора
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_numfirstles">
+            <summary>
+            Слушатель приступает к обучению с занятия
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_status">
+            <summary>
+            Статус договора на обучение
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_hourquantity">
+            <summary>
+            Длительность одного занятия в минутах
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_stopquantity">
+            <summary>
+            Допустимое количество приостановок
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_stopdayquantity">
+            <summary>
+            Допустимое кол-во дней приостановок
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_stopdayquantityfact">
+            <summary>
+            Выполненное кол-во дней приостановок
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_stopquantityfact">
+            <summary>
+            Выполнено приостановок
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan1">
+            <summary>
+            Дата плановая1
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan2">
+            <summary>
+            Дата плановая2
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan3">
+            <summary>
+            Дата плановая3
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan4">
+            <summary>
+            Дата плановая4
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan5">
+            <summary>
+            Дата плановая5
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan6">
+            <summary>
+            Дата плановая6
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan7">
+            <summary>
+            Дата плановая7
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan8">
+            <summary>
+            Дата плановая8
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan9">
+            <summary>
+            Дата плановая9
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan10">
+            <summary>
+            Дата плановая10
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan11">
+            <summary>
+            Дата плановая11
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_dateplan12">
+            <summary>
+            Дата плановая12
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact1">
+            <summary>
+            Дата фактическая1
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact2">
+            <summary>
+            Дата фактическая2
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact3">
+            <summary>
+            Дата фактическая3
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact4">
+            <summary>
+            Дата фактическая4
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact5">
+            <summary>
+            Дата фактическая5
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact6">
+            <summary>
+            Дата фактическая6
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact7">
+            <summary>
+            Дата фактическая7
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact8">
+            <summary>
+            Дата фактическая8
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact9">
+            <summary>
+            Дата фактическая9
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact10">
+            <summary>
+            Дата фактическая10
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact11">
+            <summary>
+            Дата фактическая11
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_datefact12">
+            <summary>
+            Дата фактическая12
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Opp.new_signdate">
+            <summary>
+            Дата и время подписания договора
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Reestr.txn_id">
+            <summary>
+            Номер реестра
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Reestr.txn_date">
+            <summary>
+            Дата оплаты
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Reestr.opportunityID">
+            <summary>
+            GUID Договора на обучение
+            </summary>
+        </member>
+        <member name="F:CRM4WebService.Models.Reestr.sum">
+            <summary>
+            Сумма оплаты
+            </summary>
+        </member>
+        <member name="T:CRM4WebService.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CRM4WebService.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CRM4WebService.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
     </members>
 </doc>

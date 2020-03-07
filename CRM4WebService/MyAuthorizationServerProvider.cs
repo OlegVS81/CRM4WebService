@@ -8,6 +8,34 @@ using System.Web;
 
 namespace CRM4WebService
 {
+
+    public class GlobalStore
+    {
+        public static int CurrentCount { get; set; } 
+        public static DateTime CurrentDateTime { get; set; } = DateTime.Now;
+        
+        public bool Check()
+        {            
+
+            var diffInSeconds = (DateTime.Now - GlobalStore.CurrentDateTime).TotalSeconds;
+            if (diffInSeconds > CRM4WebService.Properties.Settings.Default.Interval)
+            {
+                GlobalStore.CurrentDateTime = DateTime.Now;
+                CurrentCount = 0;
+            }
+
+
+            if (CurrentCount > CRM4WebService.Properties.Settings.Default.Count)
+                return false;
+
+            return true;
+        }
+
+        public GlobalStore()
+        {
+            CurrentCount++;
+        }
+    }
     public class MyAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
 
@@ -38,6 +66,7 @@ namespace CRM4WebService
             }
             else if (context.UserName == "Aonline" && context.Password == "Ghjdthrf123")
             {
+                
                 identity.AddClaim(new Claim(ClaimTypes.Role, "Reader"));
                 //identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
                 identity.AddClaim(new Claim("username", "Aonline"));
